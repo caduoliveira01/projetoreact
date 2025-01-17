@@ -3,6 +3,7 @@ import Tasks from "./components/Tasks";
 import AddTasks from "./components/AddTasks";
 import { v4 } from "uuid";
 import Title from "./components/Title";
+import { GithubIcon } from "lucide-react";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -61,14 +62,17 @@ function App() {
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px] space-y-4">
-        <Title>Gerenciador de tarefas</Title>
+        <Title>Task manager</Title>
         <AddTasks onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
           tasks={tasks}
           onTaskClick={onTaskClick}
           onDeleteTaskClick={onDeleteTaskClick}
         />
-        <p className="text-right text-slate-300">@caduoliveira01</p>
+        <p className="flex text-slate-300">
+          @caduoliveira01
+          <GithubIcon />
+        </p>
       </div>
     </div>
   );
